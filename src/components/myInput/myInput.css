@@ -1,0 +1,13 @@
+label {
+color:rgb(62, 62, 186);
+margin-right: 10px; 
+margin: 10px;
+}
+
+input {
+color: #000;
+}
+
+::placeholder {
+    color: #2e2d2d;
+}
