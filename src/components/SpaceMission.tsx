@@ -1,9 +1,9 @@
 export default function SpaceMission(){
 const shipName: string ='Apollo 11'
 const crewCount: number = 3
-const missionStarted: boolean = true
+//const missionStarted: boolean = true
 const crewNames: string[] = ['Нил Армстронг', 'Майкл Коллинз', 'Базз Олдрин']
-const captain:[string, number] = ['Майкл Коллинз', 35]
+//const captain:[string, number] = ['Майкл Коллинз', 35]
 const startMission = (name:string):string =>{
     return `mission ${name} start`} 
 

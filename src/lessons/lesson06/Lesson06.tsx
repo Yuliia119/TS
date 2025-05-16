@@ -78,9 +78,8 @@ showMessage(33)
   // тип данных которой позволяет прописывать любые типы
   // использовать не рекомендуется или только в крайних случаях
 
-  let someValue:any = 'whatever you want';
-  someValue = 10
-  someValue = undefined
+  //let someValue:any = 'whatever you want';
+  
 
   // ! ts-ignore | ts-nocheck
   // можно отключить проверку типов для одной строчки

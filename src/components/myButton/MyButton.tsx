@@ -1,13 +1,27 @@
 import type { JSX } from 'react';
-import './MyButton.css'
+import styles from './MyButton.module.css'
+import cn from 'classnames'
 
-interface IMyButtonProps{
+// описали интерфейс для props
+interface IMyButtonProps {
   text?: string;
-  type?: 'button'| 'submit'|'reset' ;
-  func?: ()=> void;
+  type?: 'button' | 'submit' | 'reset';
+  // описываем функцию внутри объекта
+  func?: () => void;
+  // кнопка активная или нет
+  disabled?: boolean,
+  variant?: 'primary' | 'danger' | 'success';
 }
 
-function MyButton({ text = 'Click me..', type = 'button', func = () => console.log('click!') }:IMyButtonProps):JSX.Element {
-    return <button onClick={func} type={type} className="my-button">{text}</button>;
-  }
+// используем интерфейс в описании функции
+function MyButton({ text = 'Click me..', type = "button", func = () => console.log('click!'), disabled = false, variant = 'primary' }: IMyButtonProps): JSX.Element {
+  console.log(styles);
+  return <button onClick={func} type={type} className={cn(styles.myButton, {
+    [styles.primary]:variant === 'primary',
+    [styles.danger]:variant === 'danger',
+    [styles.success]:variant === 'success',
+    [styles.disabled]:disabled === true
+  })}>{text}</button>;
+}
+
 export default MyButton;
