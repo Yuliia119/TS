@@ -4,11 +4,11 @@
   }
   
 .primary{
-  background-color: rgb(162, 66, 200);
+  background-color: rgb(155, 52, 196);
 }  
 
 .primary:hover {
-    background-color: rgb(162, 66, 200);
+    background-color: rgb(167, 115, 188);
   }
 
 .danger {
@@ -16,7 +16,7 @@
 } 
 
 .danger:hover {
-  background-color: rgb(239, 173, 52);
+  background-color: rgb(245, 189, 86);
 } 
 
 .success {

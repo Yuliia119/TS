@@ -17,7 +17,7 @@ export default function Lesson09() {
         <MyButton text= 'disabled' disabled ={true}/>
       </div>
       <p>Задачу добавления нескольких классов в CSS Modules можно решить несколькими способами:</p>
-      <ul>
+      <ul className={styles.ul}>
         <li>Конкатенация (сложение строк)</li>
         <li>Шаблонная строка (для не сложных случаев)</li>
         <li>Библиотека Classnames (предпочтительный)</li>
