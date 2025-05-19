@@ -14,13 +14,12 @@
 }
 
 .gallery{
-    max-height: 700px;
-    overflow-y: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
     padding: 10px;
+    justify-content: center;
 }
 
 .galleryGrid {
@@ -30,11 +29,12 @@
 }
 
 .galleryItem {
+  width: 300px;
   max-height: 700px;
   overflow-y: auto;
   border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 10px;
   background-color: #fdfdfd;
   box-shadow: 0 2px 5px black;
 }
@@ -42,7 +42,8 @@
 .catImage {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .catFact {
