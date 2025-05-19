@@ -17,7 +17,7 @@ export default function MyGallery({gallery, onAdd, onClear}:MyGalleryProps):JSX.
         <button onClick={onClear}>DELETE ALL DATA</button>
       </div>
 
-      <div className={styles.galleryGrid}>
+      <div className={styles.gallery}>
         {gallery.map((item, index) => (
           <div key={index} className={styles.galleryItem}>
             <img src={item.image} alt="Kat" className={styles.catImage} />
