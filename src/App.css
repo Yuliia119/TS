@@ -1,7 +1,10 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* прибиваем footer к низу и делаем адаптивным под размер контента в main */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* стандартные значения пришедшие из vite */
+  width: 100%;
   text-align: center;
 }
 
