@@ -1,10 +1,9 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-//import Lesson10 from './lessons/lesson10/Lesson10'
-//import Lesson09 from './lessons/lesson09/Lesson09'
+//import NoPage from './components/noPage/NoPage'
+import Homepage from './components/Homepage/Homepage'
+import { homework, lessons } from './routesConfig'
 import Layout from './layout/Layout'
-import Feedback from './components/Feedback/Feedback'
-import NoPage from './components/noPage/NoPage'
 
 
 function App() {
@@ -13,9 +12,14 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-         <Route path="/" element={<h1>Home Page 🏠</h1>} />
-         <Route path='feedback' element={<Feedback/>}/> 
-         <Route path='*' element={<NoPage/>}/>
+         <Route index element={<Homepage />}/>
+         {lessons.map(({path, element}) => (
+          <Route key={path} path={`lessons/${path}`} element={element} />
+         ))}
+         {homework.map(({path, element}) => (
+          <Route key={path} path={`homework/${path}`} element={element} />
+         ))}
+         
         </Route>
       </Routes>
     </HashRouter>

@@ -1,19 +1,16 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import {  Outlet } from 'react-router-dom'
 import styles from './layout.module.css'
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 export default function Layout() {
   return (
     <>
-    <header className={styles.header}>
-        <NavLink className={({ isActive }) => (isActive ? styles.isActive : '')} to='/'>Home</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? styles.isActive : '')} to='feedback'>Feedback</NavLink>
-
-      </header>
-      <main className={styles.main}>
-        {/* сюда за место Outlet будут приходить переключаемые компоненты из навигации */}
-        <Outlet />
-      </main>
-      <footer className={styles.footer}></footer>
+    <Header />
+    <main className={styles.name}>
+      <Outlet />
+    </main>
+    <Footer />
     </>
   );
 }

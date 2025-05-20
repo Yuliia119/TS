@@ -11,17 +11,20 @@
   background-color: rgb(213, 97, 24);
 }
 
-header a {
-  padding: 5px 9px;
-  color: white;
+header div {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  /* padding: 5px 9px;
+  color: white; */
 }
 
-header a:hover {
+/* header a:hover {
   text-decoration: underline;
-}
+} */
 
 .main {
-  flex: 1;
+ padding: 20px;
 }
 
 .footer {
@@ -31,6 +34,7 @@ header a:hover {
 }
 
 .isActive {
+    font-weight: bold;
   background-color: white;
   color: #D56118;
   padding: 5px 9px;
