@@ -5,8 +5,8 @@ export default function Layout() {
   return (
     <>
     <header className={styles.header}>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='feedback'>Feedback</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? styles.isActive : '')} to='/'>Home</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? styles.isActive : '')} to='feedback'>Feedback</NavLink>
 
       </header>
       <main className={styles.main}>

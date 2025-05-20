@@ -1,5 +1,5 @@
 import { fellowship } from '../../lessons/lesson05/fellowship'
-import HeroCard from './HeroCard'
+import HeroCard from './HeroCard.js'
 import './homework05.css'
 
 function Homework05(){

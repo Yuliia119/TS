@@ -1,23 +1,30 @@
 import MyButton from '../../components/myButton/MyButton'
 
+type LibraryInfo ={
+  library: string;
+  developer: string;
+  logo: string;
+}
+
 function Lesson02() {
 const text = 'это строка из переменной text!'
+
 // объект 1
-const react = {
+const react: LibraryInfo = {
     library: 'React',
     developer: 'Meta',
     logo: 'https://www.inexture.com/wp-content/uploads/2023/08/Top-10-React-Libraries.png'
   }
 
   // объект 2
-  const angular = {
+  const angular: LibraryInfo = {
     library: 'Angular',
     developer: 'Google',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Angular_Logo_SVG.svg/2560px-Angular_Logo_SVG.svg.png'
   }
 
   // функция обработки объектов
-  function showDeveloper(obj) {
+  function showDeveloper(obj: any): string {
     if (obj.developer && obj.library) {
       return `Developer of ${obj.library} is ${obj.developer}`
     }
