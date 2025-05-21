@@ -4,26 +4,30 @@ import './App.css'
 import Homepage from './components/Homepage/Homepage'
 import { homework, lessons } from './routesConfig'
 import Layout from './layout/Layout'
+//import Feedback from './components/Feedback/Feedback'
+
+
+
 
 
 function App() {
   return (
     <>
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-         <Route index element={<Homepage />}/>
-         {lessons.map(({path, element}) => (
+       <Routes>
+         <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />}/>
+          {lessons.map(({path, element}) => (
           <Route key={path} path={`lessons/${path}`} element={element} />
          ))}
          {homework.map(({path, element}) => (
           <Route key={path} path={`homework/${path}`} element={element} />
          ))}
          
-        </Route>
-      </Routes>
-    </HashRouter>
-    </>
+         </Route>
+       </Routes>
+     </HashRouter>
+     </>
   )
 }
 

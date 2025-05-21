@@ -8,6 +8,12 @@
   text-align: center;
 }
 
+.lesson-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1{
   color: rgb(0, 89, 255);
 }
@@ -46,4 +52,14 @@ h1{
 
 .read-the-docs {
   color: #888;
+}
+
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
 }
