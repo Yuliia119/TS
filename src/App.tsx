@@ -4,7 +4,7 @@ import './App.css'
 import Homepage from './components/Homepage/Homepage'
 import { homework, lessons } from './routesConfig'
 import Layout from './layout/Layout'
-//import Feedback from './components/Feedback/Feedback'
+import Feedback from './components/Feedback/Feedback'
 
 
 
@@ -17,6 +17,7 @@ function App() {
        <Routes>
          <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />}/>
+          <Route path="feedback" element={<Feedback />}/>
           {lessons.map(({path, element}) => (
           <Route key={path} path={`lessons/${path}`} element={element} />
          ))}

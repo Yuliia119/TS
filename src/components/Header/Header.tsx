@@ -13,7 +13,7 @@ const Header = () => {
         <NavLink
          to="/feedback"
         className={({ isActive }) => (isActive ? styles.isActive : '')}
-          >Feedback</NavLink>
+      >Feedback</NavLink>
     </header>
   );
 };
