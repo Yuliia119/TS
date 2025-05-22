@@ -37,5 +37,5 @@ export const homework = [
     {path: 'homework03', name :'Homework 3', element:<Homework03 />},
     {path: 'homework05', name :'Homework 5', element:<Homework05 />},
     {path: 'homework08', name :'Homework 8', element:<Homework08 />},
-    {path: 'FormGender', name :'Homework 9', element:<FormGender />},
+    {path: 'FormGender', name :'Homework 12', element:<FormGender />},
 ];
