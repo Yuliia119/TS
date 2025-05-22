@@ -1,0 +1,13 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.registerForm input {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.errorMessage {
+  color: rgb(211, 61, 19);
+}

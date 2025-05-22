@@ -16,6 +16,8 @@ import Homework05 from "./homework/homework05/Homework05";
 import Homework08 from "./homework/homework08/Homework08";
 import Lesson12 from "./lessons/lesson12/Lesson12";
 import FormGender from "./components/FormGender/FormGender";
+import Lesson13 from "./lessons/lesson13/Lesson13";
+import Homework13 from "./homework/homework13/Homework13";
 
 export const lessons = [
     {path: 'lesson01', name :'Lesson 1', element:<Lesson01 />},
@@ -29,6 +31,7 @@ export const lessons = [
     {path: 'lesson09', name :'Lesson 9', element:<Lesson09 />},
     {path: 'lesson010', name :'Lesson 10', element:<Lesson10 />},
     {path: 'lesson012', name :'Lesson 12', element:<Lesson12 />},
+    {path: 'lesson013', name :'Lesson 13', element:<Lesson13 />},
 ];
 
 export const homework = [
@@ -38,4 +41,5 @@ export const homework = [
     {path: 'homework05', name :'Homework 5', element:<Homework05 />},
     {path: 'homework08', name :'Homework 8', element:<Homework08 />},
     {path: 'FormGender', name :'Homework 12', element:<FormGender />},
+    {path: 'homework13', name :'Homework 13', element:<Homework13 />},
 ];

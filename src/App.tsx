@@ -7,9 +7,6 @@ import Layout from './layout/Layout'
 import Feedback from './components/Feedback/Feedback'
 
 
-
-
-
 function App() {
   return (
     <>
