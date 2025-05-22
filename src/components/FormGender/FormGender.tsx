@@ -3,7 +3,9 @@ import { useState } from "react"
 import MyButton from "../../components/myButton/MyButton"
 import styles from './formGender.module.css'
 
+// тип данных из формы
 interface IFormValues { name: string}
+// тип данных из API
 interface IGenderData { 
     name: string 
     gender: string 
@@ -17,7 +19,7 @@ export default function FormGender() {
         initialValues: {name: ''} as IFormValues,
         onSubmit: async (values: IFormValues) => { 
             try {
-            const response = await fetch(`https://api.genderize.io/?name=${values.name}`)
+            const response = await fetch(`https://api.genderize.io/?name=${values.name} `)
             const data = await response.json() 
             setGenderData(data) 
             } catch (error) {
