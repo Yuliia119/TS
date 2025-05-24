@@ -1,6 +1,6 @@
 
-import LoginSchema from '../../components/LoginSchema/loginSchema'
-import RegisterSchema from '../../components/RegisterSchema/registerSchema'
+import LoginSchema from '../../components/LoginSchema/LoginSchema'
+import RegisterSchema from '../../components/RegisterSchema/RegisterSchema'
 
 export default function Homework13() {
   return (

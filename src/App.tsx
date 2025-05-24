@@ -5,6 +5,9 @@ import Homepage from './components/Homepage/Homepage'
 import { homework, lessons } from './routesConfig'
 import Layout from './layout/Layout'
 import Feedback from './components/Feedback/Feedback'
+import ProductPage from './components/ProductPage/ProductPage'
+import Lesson14 from './lessons/lesson14/Lesson14'
+import NoPage from './components/noPage/NoPage'
 
 
 function App() {
@@ -21,7 +24,9 @@ function App() {
          {homework.map(({path, element}) => (
           <Route key={path} path={`homework/${path}`} element={element} />
          ))}
-         
+         <Route path='lesson14' element={<Lesson14 />} />
+         <Route path='product/:id' element={<ProductPage />} />
+         <Route path='*' element={<NoPage />} />
          </Route>
        </Routes>
      </HashRouter>
