@@ -1,0 +1,17 @@
+.cartContainer {
+  margin: 0px 80px 20px;
+}
+
+.cartContainer > div {
+  padding: 10px 0px;
+  border-bottom: 1px solid #d56118;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalPrice {
+  color: red;
+}

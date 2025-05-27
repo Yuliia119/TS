@@ -14,6 +14,16 @@ const Header = () => {
          to="/feedback"
         className={({ isActive }) => (isActive ? styles.isActive : '')}
       >Feedback</NavLink>
+
+      <NavLink
+         to="/cart"
+        className={({ isActive }) => (isActive ? styles.isActive : '')}
+      >Cart</NavLink>
+
+      <NavLink
+         to="/products"
+        className={({ isActive }) => (isActive ? styles.isActive : '')}
+      >Products</NavLink>
     </header>
   );
 };

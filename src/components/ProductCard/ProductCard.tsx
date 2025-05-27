@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './productCard.module.css'
 import type { JSX } from 'react';
+import MyButton from '../myButton/MyButton';
+import { useCart } from '../context/CartContext';
 
 interface IProductCardProps {
   id: number,
@@ -10,6 +12,9 @@ interface IProductCardProps {
 }
 
 export default function ProductCard({ id, title, price, image }: IProductCardProps): JSX.Element {
+  // ! забираем данные из контекста
+  const {addToCart} = useCart()
+  
   return (
     <Link to={`/product/${id}`}>
       <div className={styles.shopContainerCard}>
@@ -18,6 +23,10 @@ export default function ProductCard({ id, title, price, image }: IProductCardPro
         <div>
           <img src={image} alt="product-img" />
         </div>
+         <article>
+          <Link to={String(id)}><MyButton text="to product" /> </Link>
+        <MyButton func={() => addToCart({ id, title, price, quantity: 1 })} variant="success" text="add to cart" />
+        </article>
       </div>
     </Link>
   );

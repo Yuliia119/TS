@@ -22,6 +22,8 @@ import Lesson14 from "./lessons/lesson14/Lesson14";
 import ProductPage from "./components/ProductPage/ProductPage";
 import NoPage from "./components/noPage/NoPage";
 import Lesson15 from "./lessons/lesson15/Lesson15";
+import Cart from "./components/Cart/Cart";
+import Products from "./components/Products/Products";
 
 export const lessons = [
     {path: 'lesson01', name :'Lesson 1', element:<Lesson01 />},
@@ -50,8 +52,10 @@ export const homework = [
     {path: 'homework13', name :'Homework 13', element:<Homework13 />},
 ];
 
-// export const navLinks = [
+export const navLinks = [
+    {path: 'cart', name :'Cart', element:<Cart />},
+     {path: 'products', name :'Products', element:<Products />},
+]
   
 //   { path: "*", title: "404 Page not found", element: <NoPage /> },
 //   { path: "lesson14/:id", title: "", element: <ProductPage /> },
-// ];
