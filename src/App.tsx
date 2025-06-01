@@ -12,11 +12,13 @@ import StorePage from "./components/Store/StorePage";
 import { CartProvider } from "./components/context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products";
+import { ProductProvider } from "./components/Products/ProductContext";
 
 function App() {
   return (
     // * оборачиваем все приложение в CartProvider, чтобы иметь доступ к данным из корзины
     <CartProvider>
+      <ProductProvider>
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -38,6 +40,7 @@ function App() {
           </Route>
         </Routes>
       </HashRouter>
+      </ProductProvider>
     </CartProvider>
   );
 }

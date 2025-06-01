@@ -1,14 +1,14 @@
 import { createContext, useContext, useState } from "react";
 
 
-interface ICartItem{                // корзина
+export interface ICartItem{                // корзина
     id: number
     title: string
     price: number
     quantity: number
 }
 
-interface ICartContextType{         //контекст корзины
+export interface ICartContextType{         //контекст корзины
    
   cart: ICartItem[];                            // корзина
   addToCart: (product: ICartItem) => void;      // добавление элемента в корзину

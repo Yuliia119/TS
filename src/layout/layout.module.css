@@ -1,20 +1,21 @@
 .header {
   width: 100%;
   height: 80px;
-  padding: 0px 60px;
+  padding: 20px;
   position: sticky;
   top: 0px;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   background-color: rgb(213, 97, 24);
+  box-sizing: border-box;
 }
 
 header div {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
   /* padding: 5px 9px;
   color: white; */
 }
@@ -24,7 +25,7 @@ header div {
 } */
 
 .main {
- padding: 20px;
+  padding: 20px;
 }
 
 .footer {
@@ -34,13 +35,13 @@ header div {
 }
 
 .isActive {
-    font-weight: bold;
+  font-weight: bold;
   background-color: white;
-  color: #D56118;
+  color: #d56118;
   padding: 5px 9px;
   border-radius: 10px;
 }
 
 .isActive:hover {
-  color: #D56118;
+  color: #d56118;
 }

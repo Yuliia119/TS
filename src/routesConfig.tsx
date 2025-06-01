@@ -24,6 +24,7 @@ import NoPage from "./components/noPage/NoPage";
 import Lesson15 from "./lessons/lesson15/Lesson15";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products";
+import Lesson17 from "./lessons/lesson17/Lesson17";
 
 export const lessons = [
     {path: 'lesson01', name :'Lesson 1', element:<Lesson01 />},
@@ -39,7 +40,8 @@ export const lessons = [
     {path: 'lesson12', name :'Lesson 12', element:<Lesson12 />},
     {path: 'lesson13', name :'Lesson 13', element:<Lesson13 />},
     {path: 'lesson14', name :'Lesson 14', element:<Lesson14 />},
-    {path: 'lesson15', name :'Lesson 15', element:<Lesson15/>}
+    {path: 'lesson15', name :'Lesson 15', element:<Lesson15/>},
+    {path: 'lesson17', name :'Lesson 17', element:<Lesson17/>}
 ];
 
 export const homework = [

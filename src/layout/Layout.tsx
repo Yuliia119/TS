@@ -1,9 +1,21 @@
-import {  Outlet } from 'react-router-dom'
+import {  NavLink, Outlet } from 'react-router-dom'
 import styles from './layout.module.css'
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
+
+
+const navLinks = [
+  { to: '/', title: 'Home' },
+  { to: 'fetch-fox', title: 'Fetch fox' },
+  { to: 'feedback', title: 'Feedback' },
+  { to: 'form-gender', title: 'Gender form' },
+  { to: 'products', title: 'Products' },
+  { to: 'cart', title: 'Cart' },
+];
+
 export default function Layout() {
+
   return (
     <>
     <Header />

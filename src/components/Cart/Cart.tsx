@@ -1,24 +1,23 @@
-import { useCart } from "../context/CartContext"
+import { useCart, type ICartItem } from "../context/CartContext"
 import MyButton from "../myButton/MyButton";
 import styles from './cart.module.css'
 
+ // функция посчитает общую сумму товаров  в корзине
+export const getTotalPrice = (cart: ICartItem[]) => {
+  return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+};
 
 export default function Cart() {
+
   // ! забираем данные из контекста
-
   const { cart, removeFromCart, clearCart } = useCart();
-
-  // функция посчитает общую сумму товаров  в корзине
-  const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-  };
 
   return (
     <div className={styles.cartContainer}>
       <h1>Cart 🛒</h1>
-      {cart.length === 0 ? <p>Your cart is empty...</p> : (         // проверяем кол-во товаров в корзине
+      {cart.length === 0 ? <p>Your cart is empty...</p> : (
         <>
-          {cart.map(el => (                                         // мапим товар
+          {cart.map(el => (
             <div className={styles.cartItem} key={el.id}>
               <span>{el.title}</span>
               <div>
@@ -29,8 +28,8 @@ export default function Cart() {
             </div>
           ))}
           <div>
-            <h3>Total price: {getTotalPrice()}€</h3>
-            <MyButton variant="danger" func={clearCart} text="clear cart"/>
+            <h3>Total price: {getTotalPrice(cart)}€</h3>
+            <MyButton variant="danger" func={clearCart} text="clear cart" />
           </div>
         </>
       )}
