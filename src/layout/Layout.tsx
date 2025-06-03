@@ -12,6 +12,7 @@ const navLinks = [
   { to: 'form-gender', title: 'Gender form' },
   { to: 'products', title: 'Products' },
   { to: 'cart', title: 'Cart' },
+  { to: 'login', title: 'Login' },
 ];
 
 export default function Layout() {

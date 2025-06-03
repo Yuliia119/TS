@@ -4,6 +4,8 @@ import { getTotalPrice } from "../Cart/Cart";
 import { useCart } from "../context/CartContext";
 
 
+
+  
 const Header = () => {
    const { cart } = useCart();
    
@@ -29,6 +31,11 @@ const Header = () => {
          to="/products"
         className={({ isActive }) => (isActive ? styles.isActive : '')}
       >Products</NavLink>
+
+      <NavLink
+         to="/login"
+        className={({ isActive }) => (isActive ? styles.isActive : '')}
+      >Login</NavLink>
       </div>
 
 

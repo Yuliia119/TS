@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import type { IProduct } from "./types";
+import { useAppDispatch } from "../../app/hooks";
 
 
 interface ProductContextType {
@@ -32,10 +33,10 @@ export function ProductProvider({ children }: { children: ReactNode }) {  //за
       setLoading(false);
     }
   };
+
   
-  useEffect(() => {           //загрузка товаров по умолчанию
-      loadProducts(5);
-    }, []);
+  
+  
 
     return (
         <ProductContext.Provider value= {{products, loading, loadProducts}}>

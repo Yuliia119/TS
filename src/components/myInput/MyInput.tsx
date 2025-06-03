@@ -13,10 +13,12 @@ interface MyInputProps{
 }
 
 function MyInput ({name, type, placeholder, label, className, formik}:MyInputProps):JSX.Element{
-
+ const { errors } = formik;
     return (
     <div>
-        <label className={styles.label}>{label}</label>
+        <div>
+        {errors[name] ? <label style={{color: 'red'}}>{errors[name] as string}</label> : label}
+      </div>
         <input
         value={formik.values[name]} 
         onChange={formik.handleChange}

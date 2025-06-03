@@ -13,10 +13,14 @@ import { CartProvider } from "./components/context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products";
 import { ProductProvider } from "./components/Products/ProductContext";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import Login from "./components/login/Login";
 
 function App() {
   return (
-    // * оборачиваем все приложение в CartProvider, чтобы иметь доступ к данным из корзины
+    // * оборачиваем все приложение в store, чтобы иметь доступ к данным redux
+     <Provider store={store}>
     <CartProvider>
       <ProductProvider>
       <HashRouter>
@@ -24,6 +28,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />
             <Route path="feedback" element={<Feedback />} />
+            <Route path="login" element={<Login />} />
             {lessons.map(({ path, element }) => (
               <Route key={path} path={`lessons/${path}`} element={element} />
             ))}
@@ -37,11 +42,13 @@ function App() {
             <Route path="cart" element={<Cart />} />
              <Route path="products" element={<Products />} />
             <Route path="*" element={<NoPage />} />
+            
           </Route>
         </Routes>
       </HashRouter>
       </ProductProvider>
     </CartProvider>
+    </Provider>
   );
 }
 
