@@ -16,6 +16,7 @@ import { ProductProvider } from "./components/Products/ProductContext";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Login from "./components/login/Login";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -29,18 +30,22 @@ function App() {
             <Route index element={<Homepage />} />
             <Route path="feedback" element={<Feedback />} />
             <Route path="login" element={<Login />} />
+
+            {/* защищённые маршруты */}
             {lessons.map(({ path, element }) => (
-              <Route key={path} path={`lessons/${path}`} element={element} />
+              <Route key={path} path={`lessons/${path}`} element={<ProtectedRoute outlet={element} />} />
             ))}
             {homework.map(({ path, element }) => (
-              <Route key={path} path={`homework/${path}`} element={element} />
+              <Route key={path} path={`homework/${path}`} element={<ProtectedRoute outlet={element} />} />
             ))}
-            <Route path="lesson14" element={<Lesson14 />} />
-            <Route path="product/:id" element={<ProductPage />} />
-            <Route path="lesson15" element={<Lesson15 />} />
-            <Route path="store/:id" element={<StorePage />} />
-            <Route path="cart" element={<Cart />} />
-             <Route path="products" element={<Products />} />
+            <Route path="lesson14" element={<ProtectedRoute outlet={<Lesson14 />} />}/>
+            <Route path="product/:id" element={<ProtectedRoute outlet={<ProductPage />} /> }/>
+            <Route path="lesson15" element={<ProtectedRoute outlet={<Lesson15 />} />} />
+            <Route path="store/:id" element={<ProtectedRoute outlet={<StorePage />} />}/>
+            <Route path="cart" element={<ProtectedRoute outlet={<Cart />} />}/>
+            <Route path="products" element={<ProtectedRoute outlet={<Products />} />}/>
+            
+            {/* не защищённые маршруты */}
             <Route path="*" element={<NoPage />} />
             
           </Route>

@@ -14,7 +14,7 @@ interface IMyButtonProps {
 }
 
 // используем интерфейс в описании функции
-function MyButton({ text = 'Click me..', type = "button", func = () => console.log('click!'), disabled = false, variant = 'primary' }: IMyButtonProps): JSX.Element {
+function MyButton({ text = 'Click me..', type = "submit", func = () => console.log('click!'), disabled = false, variant = 'primary' }: IMyButtonProps): JSX.Element {
   console.log(styles);
   return <button onClick={func} type={type} className={cn(styles.myButton, {
     [styles.primary]:variant === 'primary',

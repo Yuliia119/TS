@@ -4,8 +4,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import MyInput from "../myInput/MyInput";
 import MyButton from "../myButton/MyButton";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loginAction } from "../../features/auth/authAction";
+import { useNavigate } from "react-router-dom";
 
 export const loginSchema = Yup.object().shape({
   username: Yup.string()
@@ -16,8 +17,10 @@ export const loginSchema = Yup.object().shape({
 });
 
 export default function Login(): JSX.Element {
+  const {error} = useAppSelector(store => store.user)
     // готовим dispatch для передачи action в redux
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   
   const formik = useFormik({
     initialValues: {
@@ -27,11 +30,18 @@ export default function Login(): JSX.Element {
     validateOnChange: false,
     // добавляем валидацию в форму
     validationSchema: loginSchema,
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      dispatch(loginAction(values))
+    onSubmit: async (values, { resetForm }) => {
+
+      // ! отправляем данные в redux и проверяем полученные данные
+      const user = await dispatch(loginAction(values)).unwrap();
+
+      // ! если данные пришли перемещаемся на главную страницу
+      if (user) {
+        navigate('/');
+      }
+      
       resetForm();
-    },
+    }
   });
 
   return (
@@ -40,8 +50,9 @@ export default function Login(): JSX.Element {
       <form onSubmit={formik.handleSubmit} className={style.formStyle}>
         <MyInput name={"username"} label={"Type your username 🙋‍♀️"} placeholder={"username"} type={"text"} formik={formik} />
         <MyInput name={"password"} label={"Type your password 🤷‍♂️"} placeholder={"password"} type={"password"} formik={formik} />
-        <MyButton text="sign in" />
+        <MyButton text="sign in" type="submit"/>
       </form>
+       {error && <span style={{color: 'red'}}>{error === 'Request failed with status code 400' ? 'Mistake in username or pass 🤖' : error === 'Request failed with status code 404' ? 'Request not found 404 🙃' : ''}</span>}
     </div>
   );
 }
